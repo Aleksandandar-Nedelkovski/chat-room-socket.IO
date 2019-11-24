@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { OauthAuthorizationService } from './services/oauth-authorization.service';
+import { Component, OnInit } from '@angular/core';
+import { OauthAuthorizationService } from "./services/oauth-authorization.service";
 
 @Component({
-  selector: 'atp-root',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  title = 'Client';
   constructor(private auth: OauthAuthorizationService) {
     this.auth.CheckAuthentication();
   }
-  title = 'Client';
 
   ngOnInit() {
     if (this.auth.IsAuthenticated) {

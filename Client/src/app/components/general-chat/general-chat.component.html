@@ -1,1 +1,19 @@
-<p>general-chat works!</p>
+<div class="container-fluid">
+  <div class="row">
+    <div *ngFor="let msg of messages" class="col-12">
+      {{msg}}
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-dark bg-dark mt-5 fixed-bottom">
+  <div class="navbar-expand m-auto navbar-text">
+    <div class="input-group mb-6">
+      <input type="text" class="form-control" placeholder="Message" aria-label="Message"
+        aria-describedby="basic-addon2"  />
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" (click)="SendMessage()">Send</button>
+      </div>
+    </div>
+  </div>
+</nav>
